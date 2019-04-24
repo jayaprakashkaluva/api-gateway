@@ -1,1 +1,12 @@
-
+zuul:
+  routes:
+    user:
+      path: /api/**
+      service-id: user-details-service
+ribbon:
+  eureka:
+    enabled: true
+user-details-service:
+  ServerListRefreshInterval: 1000
+  NIWSServerListClassName: com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList
+        
